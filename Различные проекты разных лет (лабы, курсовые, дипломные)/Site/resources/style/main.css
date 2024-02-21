@@ -1,0 +1,138 @@
+@media screen {
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background-color: rgb(244,243,252);
+  }
+  p {
+    padding-left: 10px;
+    padding-top: 5px;
+ }
+ nav ul{
+    width: 100%;
+    display: table-row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+nav li{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+nav a{
+    color: white;
+    text-decoration: none;
+   
+}
+  .wrapper {
+    position: relative;
+    min-height: 100%;
+  }
+  .content {
+    display: flex;
+    padding-top: 160px;
+    padding-bottom: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .story, .other {
+    margin-left:10px;
+    border: 10px dashed whitesmoke;
+    padding: 10px;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .other {
+    display: table;
+    padding-top: 50px;
+  }
+  .other_column {
+    display: table-row;
+  }
+  .other_block {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 50px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(244,243,252);
+    border-radius: 5px;
+  }
+
+  div a {
+    
+    text-decoration: none;
+  }
+  .author_info {
+    margin-left:10%;
+    margin-right:10%;
+    border: 10px dashed whitesmoke;
+    padding: 10px;
+    width: 75%;
+    background-color: white;
+  }
+ 
+  .author_photo {
+    padding: 10px;
+    width:300px;
+    height:400px;
+  }
+  .gerb{
+     padding-right: 20px;
+     padding-bottom: 5px;
+     padding-top: 5px;
+     border:0;
+     width:"150";
+     height:"199"; 
+  }
+.logo{
+    width: 175px;
+    height: 150px;
+    display: table-cell; 
+    color: white; 
+}
+
+.main_menu {
+    background-color: rgb(16,12,47);
+    width: 100%;
+    padding-top: auto;
+    height: auto;
+    display: flex;
+    position: fixed;
+}
+
+.footer_text{
+    
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+    position: relative;
+    padding-left:20px;
+}
+.footer {
+    
+    display: table;
+    background-color: rgb(16,12,47);
+    color: white;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+}
+
+
+

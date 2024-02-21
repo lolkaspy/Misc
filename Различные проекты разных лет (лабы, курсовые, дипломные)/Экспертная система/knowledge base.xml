@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge-base>
+  <frames>
+  <frame id="0" name="Цель">
+	<slot name="parent" question="" values=""/>
+	<slot name="Подробный подбор фильма" question="" values="" type=""/>
+  </frame>
+  
+   <frame id="1" name="Информация о предпочтениях">
+	<slot name="parent" question="" values=""/>
+	<slot name="Возраст аудитории" question="Введите ваш возраст" values="" type="numeric"/>
+	<slot name="Мультипликация" question="Это мультфильм?" values="Да;Нет" type="symbol"/>
+	<slot name="Жанр" question="Выберите предпочитаемый жанр" values="Биография;Вестерн;Комедия;Трагедия;Драма;Триллер;Ужасы;Фантастика;Приключения;Детектив;Боевик;Сказка;История;Криминал;Анимация;Мультфильм;Научная фантастика;Романтика;Романтическая комедия;Фэнтези;Художественный;Экшн" type="symbol"/>
+	<slot name="Год выпуска" question="Введите год выпуска" values="" type="numeric"/>
+	<slot name="Страна выпуска" question="Выберите страну выпуска кино" values="Германия;США;Великобритания;Франция;Австралия;Турция;Бельгия" type="symbol"/>
+	<slot name="Аудиовизуальный ряд" question="Важны ли вам параметры аудиовизуального ряда?" values="Да;Нет" type="symbol"/>
+  </frame>
+ 
+   <frame id="2" name="Аудиовизуальный ряд">
+	<slot name="parent" question="" values=""/>
+	<slot name="Звук" question="Есть ли звуковое сопровождение?" values="Да;Нет" type="symbol"/>
+	<slot name="Цвет изображения" question="Какие цвета передаются на экран?" values="Черно-белые;Натуральные" type="symbol"/>
+  </frame>
+  
+    <frame id="3" name="Сюжет">
+	<slot name="parent" question="" values=""/>
+	<slot name="Отношение к первоисточнику" question="Выберите источник идеи фильма" values="Оригинальный сценарий;Экранизация произведения" type="symbol"/>
+  </frame>
+  
+  <frame id="4" name="Хронометраж">
+	<slot name="parent" question="" values=""/>
+	<slot name="Продолжительность" question="Продолжительность фильма в часах" values="Меньше часа;Больше часа" type="symbol"/>
+  </frame>
+  </frames>
+
+  <production-rules>
+  <production-rule id="1">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="less" right="2003"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="В поисках Немо" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="2">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="less" right="2016"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Сюжет.Отношение к первоисточнику" rel="equals" right="Оригинальный сценарий"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Зверополис" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="3">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1995"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="История игрушек" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="4">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="less" right="2010"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Как приручить дракона" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="5">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2002"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Ледниковый период" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="6">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2005"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Мадагаскар" trustcoef="85"/>
+  </production-rule>
+  
+  <production-rule id="7">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2012"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Меньше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Храбрая сердцем" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="8">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2001"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Меньше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Шрек" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="9">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Великобритания"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Игра в имитацию" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="10">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Великобритания"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Бегущий в лабиринте" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="11">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2015"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Австралия"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Безумный Макс Дорога ярости" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="12">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="14;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2004"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Великобритания"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Гарри Поттер и узник Азкабана" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="13">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Грань будущего" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="14">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Дивергент" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="15">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1994"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Франция"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Леон" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="16">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2011"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Люди Икс Первый класс" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="17">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1999"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Матрица" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="18">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2003"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Матрица Перезагрузка" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="19">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1997"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Франция"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Пятый элемент" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="20">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Меньше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Стражи Галактики" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="21">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1991"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Терминатор 2 Судный день" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="22">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2011"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Форсаж 5" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="23">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2009"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Шерлок Холмс" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="24">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2012"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Джанго освобожденный" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="25">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1990"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Меньше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Танцующий с волками" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="26">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2001"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Франция"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Амели" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="27">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1998"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Американская история Икс" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="28">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1995"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Аполлон 13" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="29">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2011"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Франция"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Артист" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="30">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1982"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Бегущий по лезвию" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="31">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2013"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Австралия"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Великий Гэтсби" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="32">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2011"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Турция"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Великолепный век" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="33">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="12;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2017"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Джуманджи Зов джунглей" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="34">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="12;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2019"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Достать ножи" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="35">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2004"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Германия"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Достучаться до небес" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="36">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2006"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Дьявол носит Prada" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="37">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2006"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Германия"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Жизнь других" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="38">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2008"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Загадочная история Бенджамина Баттона" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="39">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="14;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1980"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Звездные войны Эпизод V - Империя наносит ответный удар" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="40">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="0;18"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Да"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2015"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Золушка" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="41">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="14;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2014"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Интерстеллар" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="42">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2011"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Исходный код" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="43">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1973"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Малыш" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="44">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2009"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="Бельгия"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Мистер Никто" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="45">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="14;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2004"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Остаться в живых" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="46">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2009"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Остров проклятых" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="47">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="14;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2003"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Пираты Карибского моря Проклятие Черной жемчужины" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="48">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="16;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="2000"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Реквием по мечте" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="49">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="18;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1990"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Секреты Лос-Анджелеса" trustcoef="85"/>
+  </production-rule>
+  <production-rule id="50">
+      <condition left="Информация о предпочтениях.Возраст аудитории" rel="between" right="17;120"/>
+	  <condition left="Информация о предпочтениях.Мультипликация" rel="equals" right="Нет"/>
+	  <condition left="Информация о предпочтениях.Год выпуска" rel="greater" right="1994"/>
+	  <condition left="Информация о предпочтениях.Страна выпуска" rel="equals" right="США"/>
+	  <condition left="Хронометраж.Продолжительность" rel="equals" right="Больше часа"/>
+      <action left="Цель.Подробный подбор фильма" rel="equals" right="Форрест Гамп" trustcoef="85"/>
+  </production-rule>
+  
+</production-rules>  
+
+</knowledge-base>

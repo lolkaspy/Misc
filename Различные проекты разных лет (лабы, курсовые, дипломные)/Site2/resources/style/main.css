@@ -1,0 +1,125 @@
+@media screen {
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+	
+  }
+  body{
+	  background-color: rgb(197,185,190);
+    /*background-image:  url(uzor.png); */
+	  background-image:  url(3708.png);
+	  background-size: 40%;
+	  background-position: 1130px 480px;
+	  background-repeat: no-repeat;
+  }
+
+  nav ul{
+    width: 100%;
+    display: table-row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+nav li{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+nav a{
+    color: white;
+    text-decoration: none;
+   
+}
+.main_menu {
+  background-color: rgb(16,12,47);
+  width: 100%;
+  padding-top: auto;
+  height: auto;
+  display: flex;
+  position: fixed;
+}
+  .wrapper {
+    position: relative;
+    min-height: 100%;
+  }
+  .content {
+    display: flex;
+    padding-top: 110px;
+    padding-bottom: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+  }
+  .foto_title, .video_title, .audio_title, .fotos, .videos{
+    display:flex;
+  }
+
+  audio {
+    display: block;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color:  whitesmoke;
+    
+  }
+  audio::-webkit-media-controls-mute-button, audio::-webkit-media-controls-play-button {
+    background-color: #B1D4E0;
+    border-radius: 50%;
+  }
+  
+  .foto_title, .video_title, .audio_title{
+    padding-left: 15px;
+    padding-top: 10px;
+
+  }
+  .foto, .vid, .aud {
+    width:fit-content;
+    background-color: whitesmoke;
+    position:relative;
+    display: block;
+  
+  }
+  .foto_item {
+    border: 2px solid gray;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px;
+    background-color: white;
+  }
+
+
+ a img {
+    vertical-align:bottom;
+  }
+
+.footer_text{
+    
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+    position: relative;
+    padding-left:20px;
+}
+.footer {
+    
+    display: table;
+    background-color: rgb(16,12,47);
+    color: white;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+}
+
+
+

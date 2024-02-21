@@ -1,0 +1,8 @@
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\bin\Debug\GraphLab.exe.config
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\bin\Debug\GraphLab.exe
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\bin\Debug\GraphLab.pdb
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\obj\Debug\GraphLab.csproj.AssemblyReference.cache
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\obj\Debug\GraphLab.csproj.SuggestedBindingRedirects.cache
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\obj\Debug\GraphLab.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\obj\Debug\GraphLab.exe
+C:\Users\Дмитрий\source\repos\GraphLab\GraphLab\obj\Debug\GraphLab.pdb

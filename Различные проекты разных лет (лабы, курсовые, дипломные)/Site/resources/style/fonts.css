@@ -1,0 +1,42 @@
+@media screen {
+    @font-face {
+        font-family: 'Railway Regular';
+        src: url('fonts/Raleway-Regular.ttf');
+        font-weight: normal;
+        font-style: normal;
+        }
+    
+    @font-face {
+        font-family: 'Railway Semibold';
+        src: url('fonts/Raleway-SemiBold.ttf');
+        font-weight: normal;
+        font-style: normal;
+        }
+    
+    @font-face {
+        font-family: 'Railway Medium';
+        src: url('fonts/Raleway-Medium.ttf');
+        font-weight: normal;
+        font-style: normal;
+        }
+    
+        * {
+            font-family: 'Railway Medium';
+        }
+        .main_menu {
+            font-size: 32px;
+        }
+        .content{
+            font-size: 18px;
+        }
+        .footer{
+            font-size: 16px;
+        }
+    
+        .other{
+            font-size: 28px;
+        }
+        .other_block{
+            font-size: 36px;
+        }
+}

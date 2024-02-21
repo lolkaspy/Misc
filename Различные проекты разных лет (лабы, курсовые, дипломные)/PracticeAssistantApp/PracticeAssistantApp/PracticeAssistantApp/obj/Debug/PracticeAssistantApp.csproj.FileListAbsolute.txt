@@ -1,0 +1,17 @@
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\bin\Debug\PracticeAssistantApp.exe.config
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\bin\Debug\PracticeAssistantApp.exe
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\bin\Debug\PracticeAssistantApp.pdb
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.csprojAssemblyReference.cache
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.MainApp.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.Properties.Resources.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.csproj.GenerateResource.cache
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.exe
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.pdb
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.Student.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.Teacher.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.StudSchedule.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\bin\Debug\Source.mdf
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\bin\Debug\Source_log.ldf
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.StudQuartMarks.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.TeachSchedule1.resources
+C:\sourcekirill\PracticeAssistantApp\PracticeAssistantApp\obj\Debug\PracticeAssistantApp.TeachQuartMarks.resources
